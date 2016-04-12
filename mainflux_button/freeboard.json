@@ -1,0 +1,86 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "FluxButton Message",
+						"size": "regular",
+						"value": "datasources[\"Mainflux\"][\"message\"]",
+						"animate": true
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 1
+			},
+			"col": {
+				"3": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"value": "datasources[\"Mainflux\"][\"message\"]",
+						"units": "BUTTON",
+						"min_value": 0,
+						"max_value": "1"
+					}
+				}
+			]
+		},
+		{
+			"width": 1,
+			"row": {
+				"3": 5
+			},
+			"col": {
+				"3": 1
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "sparkline",
+					"settings": {
+						"title": "Button",
+						"value": [
+							"datasources[\"Mainflux\"][\"message\"]"
+						]
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "Mainflux",
+			"type": "FIWARE Orion",
+			"settings": {
+				"cbhost": "mainflux.io:1026",
+				"use_thingproxy": true,
+				"service": "mainflux",
+				"servicepath": "/mqtt",
+				"type": "FluxButton",
+				"id": "FluxButton001",
+				"refresh": 1
+			}
+		}
+	],
+	"columns": 3
+}
